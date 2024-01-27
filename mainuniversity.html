@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Web Portal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #4caf50;
+        text-align: center;
+      }
+      .year {
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        color: white;
+        text-align: center;
+        width: 100px;
+        margin: 0 auto;
+        display: block;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .year:hover {
+        background-color: #0056b3;
+      }
+      .options {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .options button {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 0 10px;
+      }
+      .options button:hover {
+        background-color: #d32f2f;
+      }
+      .student {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .student button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .student button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>University Web Portal</h1>
+    </header>
+    <div class="container">
+      <h2>Select Academic Year</h2>
+      <div class="year" onclick="showOptions(2024)">2024</div>
+      <!-- Add more year sections here -->
+    </div>
+
+    <div id="options" class="container" style="display: none">
+      <h2>Options for 2024</h2>
+      <div class="options">
+        <button onclick="generateStudents()">Generate New Students</button>
+        <button onclick="showStudents()">View Existing Students</button>
+      </div>
+    </div>
+
+    <div id="studentList" class="container" style="display: none">
+      <h2>Students - 2024</h2>
+      <div id="students"></div>
+    </div>
+
+    <script>
+      function showOptions(year) {
+          document.getElementById('options').style.display = 'block';
+      }
+
+      function generateStudents() {
+          // Placeholder for generating new students
+          alert("Generating new students...");
+      }
+
+      function showStudents() {
+          document.getElementById('studentList').style.display = 'block';
+          const students = ['Student 1', 'Student 2', 'Student 3', 'Student 4'];
+
+          const studentList = document.getElementById('students');
+          studentList.innerHTML = '';
+
+          students.forEach((student, index) => {
+              const studentDiv = document.createElement('div');
+              studentDiv.classList.add('student');
+              studentDiv.innerHTML = `
+                  <span><a href="#" onclick="openPortfolio('${student}')">Student ${index + 1}</a></span>
+                  <button onclick="uploadDiploma('${student}')">Upload Diploma</button>
+                  <button onclick="uploadGrades('${student}')">Upload Grades</button>
+                  <button onclick="performSignature('${student}')">Perform Signature</button>
+              `;
+              studentList.appendChild(studentDiv);
+          });
+      }
+
+      function openPortfolio(student) {
+          alert(Opening portfolio for ${student});
+          // You can replace the alert with actual navigation logic to the student's portfolio page
+      }
+
+      function uploadDiploma(student) {
+          alert(Uploading diploma for ${student});
+          // You can implement the logic to upload diplomas here
+      }
+
+      function uploadGrades(student) {
+          alert(Uploading grades for ${student});
+          // You can implement the logic to upload grades here
+      }
+
+      function performSignature(student) {
+          alert(Performing signature for ${student});
+          // You can implement the logic to perform signatures here
+      }
+    </script>
+  </body>
+</html>

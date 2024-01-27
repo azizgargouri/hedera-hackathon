@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form | Dan Aleko</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="login-form">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input
+            id="public-key-input"
+            type="text"
+            placeholder="public key"
+            required
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input
+            id="private-key-input"
+            type="password"
+            placeholder="Private key"
+            required
+          />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <button id="login-button" type="submit" class="btn">Login</button>
+        <div class="register-link">
+          <p>Dont have an account? <a href="#">Register</a></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("login-form");
+      const publicKeyInput = document.getElementById("public-key-input");
+      const privateKeyInput = document.getElementById("private-key-input");
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent the form from submitting normally
+
+        const publicKey = publicKeyInput.value.trim();
+        const privateKey = privateKeyInput.value.trim();
+
+        // Replace the condition below with your desired validation logic
+        if (publicKey === "aziz" && privateKey === "aziz") {
+          // Replace 'redirect-url' with the actual URL where you want to redirect the user
+          window.location.href = "mainstudent.html";
+        } else {
+          alert("Invalid keys. Please try again.");
+        }
+      });
+    </script>
+  </body>
+</html>

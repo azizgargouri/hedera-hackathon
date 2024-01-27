@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Selection</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-image: url("bg.jpg");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .wrapper {
+        width: 420px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(9px);
+        color: #fff;
+        border-radius: 12px;
+        padding: 30px 40px;
+      }
+
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .button {
+        display: block;
+        width: 100%;
+        height: 45px;
+        background-color: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        font-size: 16px;
+        color: #000000;
+        text-align: center;
+        text-decoration: none;
+        line-height: 45px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: #000000;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Welcome to My Website</h1>
+      <p>Please select your login option:</p>
+      <a class="button" href="indexstudent.html">Login as University</a>
+      <a class="button" href="indexuniversity.html">Login as Student</a>
+      <a class="button" href="index.html">Login as Recruiter</a>
+    </div>
+  </body>
+</html>
