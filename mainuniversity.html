@@ -114,52 +114,54 @@
 
     <script>
       function showOptions(year) {
-          document.getElementById('options').style.display = 'block';
+        document.getElementById("options").style.display = "block";
       }
 
       function generateStudents() {
-          // Placeholder for generating new students
-          alert("Generating new students...");
+        // Placeholder for generating new students
+        alert("Generating new students...");
       }
 
       function showStudents() {
-          document.getElementById('studentList').style.display = 'block';
-          const students = ['Student 1', 'Student 2', 'Student 3', 'Student 4'];
+        document.getElementById("studentList").style.display = "block";
+        const students = ["Student 1", "Student 2", "Student 3", "Student 4"];
 
-          const studentList = document.getElementById('students');
-          studentList.innerHTML = '';
+        const studentList = document.getElementById("students");
+        studentList.innerHTML = "";
 
-          students.forEach((student, index) => {
-              const studentDiv = document.createElement('div');
-              studentDiv.classList.add('student');
-              studentDiv.innerHTML = `
-                  <span><a href="#" onclick="openPortfolio('${student}')">Student ${index + 1}</a></span>
+        students.forEach((student, index) => {
+          const studentDiv = document.createElement("div");
+          studentDiv.classList.add("student");
+          studentDiv.innerHTML = `
+                  <span><a href="#" onclick="openPortfolio('${student}')">Student ${
+            index + 1
+          }</a></span>
                   <button onclick="uploadDiploma('${student}')">Upload Diploma</button>
                   <button onclick="uploadGrades('${student}')">Upload Grades</button>
                   <button onclick="performSignature('${student}')">Perform Signature</button>
               `;
-              studentList.appendChild(studentDiv);
-          });
+          studentList.appendChild(studentDiv);
+        });
       }
 
       function openPortfolio(student) {
-          alert(Opening portfolio for ${student});
-          // You can replace the alert with actual navigation logic to the student's portfolio page
+        alert("Opening portfolio for " + student);
+        // You can replace the alert with actual navigation logic to the student's portfolio page
       }
 
       function uploadDiploma(student) {
-          alert(Uploading diploma for ${student});
-          // You can implement the logic to upload diplomas here
+        alert("Uploading diploma for " + student);
+        // You can implement the logic to upload diplomas here
       }
 
       function uploadGrades(student) {
-          alert(Uploading grades for ${student});
-          // You can implement the logic to upload grades here
+        alert("Uploading grades for " + student);
+        // You can implement the logic to upload grades here
       }
 
       function performSignature(student) {
-          alert(Performing signature for ${student});
-          // You can implement the logic to perform signatures here
+        alert("Performing signature for " + student);
+        // You can implement the logic to perform signatures here
       }
     </script>
   </body>
