@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account | Dan Aleko</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .eye-icon {
+        cursor: pointer;
+        font-size: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="create-account-form">
+        <h1>Create Account</h1>
+        <div class="input-box">
+          <input
+            id="public-key-input"
+            type="text"
+            placeholder="Public Key"
+            required
+            disabled
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input
+            id="private-key-input"
+            type="password"
+            placeholder="Private Key"
+            required
+            disabled
+          />
+          <i
+            id="private-key-toggle"
+            class="bx bx-lock-alt eye-icon"
+            onclick="togglePrivateKeyVisibility()"
+          ></i>
+        </div>
+        <div class="input-box">
+          <input
+            id="username-input"
+            type="text"
+            placeholder="Username"
+            required
+          />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input-box">
+          <input
+            id="password-input"
+            type="password"
+            placeholder="Password"
+            required
+          />
+          <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <button id="create-account-button" type="submit" class="btn">
+          Create Account
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function togglePrivateKeyVisibility() {
+        const privateKeyInput = document.getElementById("private-key-input");
+        const privateKeyToggle = document.getElementById("private-key-toggle");
+
+        if (privateKeyInput.type === "password") {
+          privateKeyInput.type = "text";
+          privateKeyToggle.classList.remove("bx-lock-alt");
+          privateKeyToggle.classList.add("bx-show");
+        } else {
+          privateKeyInput.type = "password";
+          privateKeyToggle.classList.remove("bx-show");
+          privateKeyToggle.classList.add("bx-lock-alt");
+        }
+      }
+
+      const createAccountForm = document.getElementById("create-account-form");
+      const publicKeyInput = document.getElementById("public-key-input");
+      const privateKeyInput = document.getElementById("private-key-input");
+      const usernameInput = document.getElementById("username-input");
+      const passwordInput = document.getElementById("password-input");
+
+      // Generate the public key and private key
+      // const generatedPublicKey = "ss";
+      // const generatedPrivateKey = "";
+      publicKeyInput.value = generatedPublicKey;
+      privateKeyInput.value = generatedPrivateKey;
+
+      createAccountForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Prevent the form from submitting normally
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        // Replace the code below with your desired logic
+        // to create the account using the generatedPublicKey,
+        // generatedPrivateKey, username, and password.
+
+        alert("Account created successfully!");
+        createAccountForm.reset(); // Reset the form fields
+      });
+    </script>
+  </body>
+</html>
